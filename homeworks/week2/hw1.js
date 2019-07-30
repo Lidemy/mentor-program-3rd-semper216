@@ -6,5 +6,4 @@ function printStars(n) {
 
 printStars(6);
 
-
 /** no return value **/
