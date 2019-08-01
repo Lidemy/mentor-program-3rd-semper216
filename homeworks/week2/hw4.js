@@ -1,11 +1,11 @@
 function printFactor(num) {
-	for(var i=1;i<num;i++){
-		if(num%i==0){
-			console.log(i)
-		}
-	}
+  for (let i = 1; i < num; i += 1) {
+    if (num % i === 0) {
+      console.log(i);
+    }
+  }
 }
 
 printFactor(10);
 
-/** no return value **/
+/* no return value */

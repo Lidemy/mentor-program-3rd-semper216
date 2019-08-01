@@ -1,13 +1,15 @@
 function reverse(str) {
-	str_len = str.length
-    new_order= []
-    for(i=0;i<str_len;i++){
-	    new_obj = str[str_len-1-i]
-	    new_order.push(new_obj)
-	    new_str= new_order.join('')
-	}
-console.log(new_str)
-return new_str;
+  const strLen = str.length;
+  const newOrder = [];
+  let newObj = '';
+  let newStr = '';
+  for (let i = 0; i < strLen; i += 1) {
+    newObj = str[strLen - 1 - i];
+    newOrder.push(newObj);
+    newStr = newOrder.join('');
+  }
+  console.log(newStr);
+  return newStr;
 }
 
-reverse('hello')
+reverse('hello');
