@@ -7,6 +7,6 @@ request('https://lidemy-book-store.herokuapp.com/books',
       const BookData = json[i];
       const BookName = BookData.name;
       const ID = BookData.id; // eslint-disable-line no-unused-vars
-      console.log(`ID: ${BookName}`);
+      console.log(`${ID} ${BookName}`);
     }
   });
