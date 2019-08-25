@@ -29,9 +29,9 @@ if (process.argv[2] === 'read' && process.argv[3].match(/\d/)) { // 輸入正確
         const json = JSON.parse(body);
         const BookName = json.name; // 取出該筆物件屬性 name
         const ID = json.id; // eslint-disable-line no-unused-vars
-        console.log(`ID:${ID}\tBookName:${BookName}`); // ES6字符串語法
+        console.log(`${ID}\t${BookName}`); // ES6字符串語法
       }
-      if (response.statusCode === 404) { // 輸入正確 read 指令，找不到對應 id
+      if (response.statusCode === 404) { // read 失敗，找不到對應 id
         console.log(`the book of ID ${BookID} dosen't exist`);
       }
     },
@@ -46,10 +46,10 @@ if (process.argv[2] === 'delete' && process.argv[3].match(/[\d]/)) { // 輸入�
   request.delete(
     `https://lidemy-book-store.herokuapp.com/books/${deleteID}`,
     (error, response) => {
-      if (response.statusCode === 200) { // 刪除單筆資料
+      if (response.statusCode === 200) { // 成功刪除單筆資料
         console.log(`delete the book of ID "${deleteID}" from list successfully`);
       }
-      if (response.statusCode === 404) { // 輸入正確指令，找不到刪除 id
+      if (response.statusCode === 404) { // 刪除失敗，找不到 id
         console.log(`the book of ID "${deleteID}" doesn't exist`);
       }
     },
