@@ -17,11 +17,11 @@ if (process.argv[2] === 'list') {
   );
 }
 // input ID return the book name of id
-if (process.argv[2] === 'read' && process.argv[3].match(/[^\d]/)) {
+if (process.argv[2] === 'read' && process.argv[3].match(/[^\d]/)) { // 輸入錯誤 read 指令，id 非數字
   console.log('the input ID should be integer');
 }
 const BookID = process.argv[3];
-if (process.argv[2] === 'read' && process.argv[3].match(/\d/)) {
+if (process.argv[2] === 'read' && process.argv[3].match(/\d/)) { // 輸入正確 read 指令
   request(
     `https://lidemy-book-store.herokuapp.com/books/${BookID}`,
     (error, response, body) => { // 箭頭函式，省略 fuction
@@ -31,7 +31,7 @@ if (process.argv[2] === 'read' && process.argv[3].match(/\d/)) {
         const ID = json.id; // eslint-disable-line no-unused-vars
         console.log(`ID:${ID}\tBookName:${BookName}`); // ES6字符串語法
       }
-      if (response.statusCode === 404) {
+      if (response.statusCode === 404) { // 輸入正確 read 指令，找不到對應 id
         console.log(`the book of ID ${BookID} dosen't exist`);
       }
     },
@@ -39,17 +39,17 @@ if (process.argv[2] === 'read' && process.argv[3].match(/\d/)) {
 }
 // delete the book of id
 const deleteID = process.argv[3];
-if (process.argv[2] === 'delete' && process.argv[3].match(/[^\d]/)) {
+if (process.argv[2] === 'delete' && process.argv[3].match(/[^\d]/)) { // 輸入錯誤 delete 指令，id 非數字
   console.log('the input ID should be integer');
 }
-if (process.argv[2] === 'delete' && process.argv[3].match(/[\d]/)) {
+if (process.argv[2] === 'delete' && process.argv[3].match(/[\d]/)) { // 輸入正確 delete 指令
   request.delete(
     `https://lidemy-book-store.herokuapp.com/books/${deleteID}`,
     (error, response) => {
-      if (response.statusCode === 200) {
+      if (response.statusCode === 200) { // 刪除單筆資料
         console.log(`delete the book of ID "${deleteID}" from list successfully`);
       }
-      if (response.statusCode === 404) {
+      if (response.statusCode === 404) { // 輸入正確指令，找不到刪除 id
         console.log(`the book of ID "${deleteID}" doesn't exist`);
       }
     },
@@ -58,14 +58,14 @@ if (process.argv[2] === 'delete' && process.argv[3].match(/[\d]/)) {
 
 // add new book
 const addBookName = process.argv[3];
-if (process.argv[2] === 'create' && typeof (process.argv[3]) === 'string') {
+if (process.argv[2] === 'create' && typeof (process.argv[3]) === 'string') { // 輸入正確 create 指令
   request.post(
     {
       url: 'https://lidemy-book-store.herokuapp.com/books',
       form: { name: addBookName },
     },
     (error, response) => {
-      if (response.statusCode === 201) {
+      if (response.statusCode === 201) { // 成功新增資料
         console.log(`add the new book "${addBookName}" to list successfully`);
       }
     },
