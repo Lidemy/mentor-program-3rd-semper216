@@ -71,3 +71,19 @@ if (process.argv[2] === 'create' && typeof (process.argv[3]) === 'string') { // 
     },
   );
 }
+// update new name of book
+const UpdateName = process.argv[4];
+const UpdateId = process.argv[3];
+if (process.argv[2] === 'update' && process.argv[3].match(/[\d]/) && typeof (process.argv[4]) === 'string') { // 輸入正確 update 指令
+  request.patch(
+    {
+      url: `https://lidemy-book-store.herokuapp.com/books/${UpdateId}`,
+      form: { name: UpdateName },
+    },
+    (error, response) => {
+      if (response.statusCode === 200) { // 成功更新資料
+        console.log(`update the book of id ${UpdateId} with new name "${UpdateName}"`);
+      }
+    },
+  );
+}
