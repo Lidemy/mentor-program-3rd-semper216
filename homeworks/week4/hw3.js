@@ -74,6 +74,9 @@ if (process.argv[2] === 'create' && typeof (process.argv[3]) === 'string') { // 
 // update new name of book
 const UpdateName = process.argv[4];
 const UpdateId = process.argv[3];
+if (process.argv[2] === 'update' && process.argv[3].match(/[^\d]/)) {
+  console.log('the input after "update" should be book ID');
+}
 if (process.argv[2] === 'update' && process.argv[3].match(/[\d]/) && typeof (process.argv[4]) === 'string') { // 輸入正確 update 指令
   request.patch(
     {
