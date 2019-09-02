@@ -12,7 +12,7 @@ API 是一個資料交換的溝通窗口，服務提供者可以設立一個服�
 
 * API 簡介：嗨，這裡是「愛評台」，我們提供使用者豐富的台灣餐廳資料查詢服務，同時也秉持著「呷好道相報」的精神，歡迎大家分享新開的餐廳，並回報歇業的餐廳，如果店家資料有錯誤，例如該店已經遷店，也可以幫我們更新店家新地址等資訊。
 
-* Base URL： https:// ipentai.restaurants.com
+* Base URL： https://ipentai.restaurants.com
 
 * API 回傳結果範例：
 ```javascript
