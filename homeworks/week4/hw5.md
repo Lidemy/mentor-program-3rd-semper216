@@ -34,22 +34,22 @@ API 是一個資料交換的溝通窗口，服務提供者可以設立一個服�
 
 * 下面是你可以對愛評台API進行的request methods動作：
   * 查詢所有餐廳
-  + Method : GET
-  + 路徑 : /shops
-  + 參數 : _limit:限制回傳資料數量
+      + Method : GET
+    + 路徑 : /shops
+    + 參數 : _limit:限制回傳資料數量
   * 回傳單一餐廳
-  + Method : GET
-  + 路徑 : /shops/:id
-  + 參數 : 無
+    + Method : GET
+    + 路徑 : /shops/:id
+    + 參數 : 無
   * 刪除餐廳
-  + Method : DELETE
-  + 路徑 : /shops/:id
-  + 參數 : 無
+    + Method : DELETE
+    + 路徑 : /shops/:id
+    + 參數 : 無
   * 新增餐廳
-  + Method : POST 
-  + 路徑 : /shops
-  + 參數 : 無
+    + Method : POST 
+    + 路徑 : /shops
+    + 參數 : 無
   * 更改餐廳
-  + Method : PATCH
-  + 路徑 : /shops/:id
-  + 參數 : name:餐廳名,address:地址,phone:電話
+    + Method : PATCH
+    + 路徑 : /shops/:id
+    + 參數 : name:餐廳名,address:地址,phone:電話
